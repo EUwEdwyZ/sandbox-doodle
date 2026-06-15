@@ -1,0 +1,39 @@
+<template>
+  <ul class="cardGrid">
+    <li v-for="(item, i) in items" :key="i" class="cardGrid__item">{{ item }}</li>
+  </ul>
+  <LoadingSpinner v-if="loading" />
+  <div v-if="!hasMore" style="text-align:center; padding: 1rem;">
+    もうこれ以上ありません
+  </div>
+</template>
+
+<script setup>
+import LoadingSpinner from './LoadingSpinner.vue'
+
+const props = defineProps({
+  items: Array,
+  loading: Boolean,
+  hasMore: Boolean,
+})
+
+const emit = defineEmits(['loadMore'])
+
+// スクロール検知はここではやらないので onScroll もなくてOK
+</script>
+
+<style scoped lang="scss">
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); // 5カラム固定
+    gap: 1rem;
+    &__item {
+      aspect-ratio: 1 / 1;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  }
+</style>
