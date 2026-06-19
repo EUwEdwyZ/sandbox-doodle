@@ -82,7 +82,7 @@ const linkedCaption = (caption) => {
   // ハッシュタグ部分を<a>リンクに置換
   // 英数字、アンダースコア、ひらがな、カタカナ、漢字、長音符「ー」に対応
   const linked = escaped.replace(/#([\wぁ-んァ-ヶ一-龠ー]+)/g, (match, tag) => {
-    return `<a href="#" class="text-blue-500 hover:opacity-70" data-tag="${tag}">#${tag}</a>`
+    return `<a href="#" class="hashtag text-blue-500 hover:opacity-70" data-tag="${tag}">#${tag}</a>`
   })
   // DOMPurifyで安全化。許可タグはaとbrのみ、属性はhref/class/data-tagのみ
   return DOMPurify.sanitize(linked, {
