@@ -4,13 +4,14 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
+// .env ファイルから値を安全に読み込む
 const firebaseConfig = {
-  apiKey: 'xxxxxx',
-  authDomain: 'mysite-dfe65.firebaseapp.com',
-  projectId: 'mysite-dfe65',
-  storageBucket: 'mysite-dfe65.firebasestorage.app',
-  messagingSenderId: '1026898945291',
-  appId: '1:1026898945291:web:3f9d23c25f20afb4922e0e',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
 const app = initializeApp(firebaseConfig)
