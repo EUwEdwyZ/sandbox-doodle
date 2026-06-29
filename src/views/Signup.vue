@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <!-- <Header /> -->
   <div class="flex justify-center items-center min-h-[100vh]">
     <div class="w-100 max-w-full p-10 bg-white rounded-l shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
       <h2 class="mb-7 text-center text-2xl font-bold">新規登録</h2>
