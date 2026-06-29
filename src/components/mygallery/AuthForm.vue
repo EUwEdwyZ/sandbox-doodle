@@ -22,7 +22,8 @@
             @click="togglePassword"
             @mouseover="showTooltip = true"
             @mouseleave="showTooltip = false"
-            button-bg-color="transparent"
+            bgColor="transparent"
+            textColor="gray"
           >
             <iconify-icon
               :icon="showPassword ? 'mdi:hide' : 'mdi:show'"
